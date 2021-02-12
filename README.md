@@ -26,5 +26,3 @@
 2. build the project with gradle, it will generate the Stubs automatically
 3. Make sure to update your system IP address where server is running at 2 places  - 1) src/main/java/edu/sapient/ice/UnaryDemo.kt in getChannel() and 2) src/main/java/edu/sapient/ice/BiDirectionalDemo.kt in getChannel()
 3. Run the app in emulator.
-
-
