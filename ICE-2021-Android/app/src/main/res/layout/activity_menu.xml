@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/menu_app_bar"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ice_logo"
+        app:title="gRPC-Demo" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/unary"
+        android:layout_width="297dp"
+        android:layout_height="94dp"
+        android:gravity="center"
+        android:inputType="text"
+        android:onClick="onUnaryClicked"
+        android:text="Unary Communication"
+        android:textColor="#2E2E2E"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bi_directional_streaming"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/bi_directional_streaming"
+        app:layout_constraintTop_toBottomOf="@+id/menu_app_bar"
+        app:layout_constraintVertical_bias="0.213" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bi_directional_streaming"
+        android:layout_width="298dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:inputType="text"
+        android:onClick="biDirectionalClicked"
+        android:text="Bi-Directional Streaming"
+        android:textColor="#2E2E2E"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unary"
+        app:layout_constraintVertical_bias="0.169" />
+</androidx.constraintlayout.widget.ConstraintLayout>

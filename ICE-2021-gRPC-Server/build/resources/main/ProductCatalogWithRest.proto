@@ -1,0 +1,81 @@
+//syntax = "proto3";
+//package com.ice.shopping;
+//
+//option java_package = "com.ice.grpc.protos";
+//option java_multiple_files = true;
+//import "google/api/annotations.proto";
+//
+//message Product {
+//  int32 id = 1;
+//  string name = 2;
+//  double price = 3;
+//  string description = 4;
+//  string image_url_small = 5;
+//  string image_url_big = 6;
+//  ProductCategory category = 7;
+//}
+//
+//enum ProductCategory {
+//  ALL = 0;
+//  DESSERTS = 1;
+//  DAIRY =2;
+//  BEVERAGES = 3;
+//  SPICES = 4;
+//  BREADS = 5;
+//  BAKERY = 6;
+//  FRUITS = 7;
+//  VEGETABLES = 8;
+//  COOKIES = 9;
+//  HERBS = 10;
+//  OILS = 11;
+//  CHEESE = 12;
+//  DRINKS = 13;
+//}
+//
+//message ProductListResponse {
+//  repeated Product products = 1;
+//  int32 totalPages = 2;
+//}
+//
+//message ProductDetailResponse {
+//  Product product = 1;
+//}
+//
+//message ProductListRequest {
+//  ProductCategory productType = 1;
+//  int32 pageNumber = 2;
+//}
+//
+//message ProductDetailRequest {
+//  int32 productId = 1;
+//}
+//
+//message ProductImageRequest {
+//  string productImageUrl = 1;
+//}
+//
+//message ProductImageResponse {
+//  bytes imageBitmapData = 1;
+//}
+//
+//service ProductCatalogService {
+//  rpc getProductList (stream ProductListRequest) returns (stream ProductListResponse);
+//  rpc getProductImage (ProductImageRequest) returns (stream ProductImageResponse);
+//
+//  rpc getProductById (ProductDetailRequest) returns (ProductDetailResponse) {
+//    option (google.api.http) = {
+//            get: "/v1/product/{id}"   // Method: GET,POST, PUT etc...
+//      };
+//  }
+//
+//  rpc filterProductByCategory (ProductListRequest) returns (ProductListResponse) {
+//    option (google.api.http) = {
+//      get: "/v1/product/{category}/{id}"
+//    };
+//  }
+//
+//}
+//
+//
+//
+//
